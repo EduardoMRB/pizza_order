@@ -20,7 +20,7 @@
              {% if sabor.disponivel == 1 %} checked {% endif %}>
     </div>
 
-    <input type="hidden" name="id" value="{{ id }}">
+    <input type="hidden" name="id" value="{{ sabor.id }}">
     <input type="hidden" name="_METHOD" value="PUT">
     <div class="form-actions">
       <button type="submit">Alterar!</button>
