@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+  <form action="/update" name="pizza" method="POST">
+    <div class="form-control">
+      <label for="sabor">Sabor:</label>
+      <input type="text" value="{{ sabor.sabor }}" name="sabor" required>
+    </div>
+    <div class="form-control">
+      <label for="preco">Preço:</label>
+      <input type="text" value="{{ sabor.preco }}" name="preco">
+    </div>
+    <div class="form-control">
+      <label for="descricao">Descrição:</label>
+      <textarea name="descricao" required>{{ sabor.descricao }}</textarea>
+    </div>
+    <div class="form-control">
+      <label for="disponivel">Disponível?</label>
+      <input type="checkbox" name="disponivel" value="1"
+             {% if sabor.disponivel == 1 %} checked {% endif %}>
+    </div>
+
+    <input type="hidden" name="id" value="{{ id }}">
+    <input type="hidden" name="_METHOD" value="PUT">
+    <div class="form-actions">
+      <button type="submit">Alterar!</button>
+      <a href="/">Voltar para a lista</a>
+    </div>
+  </form>
+{% endblock %}

@@ -45,6 +45,12 @@ $app->post('/create', function () use ($app) {
     $app->redirect('/');
 });
 
+$app->get('/edit/:id', function ($id) use ($app) {
+    $app->render('edit.html.twig', [
+        'sabor' => $app->saborMapper->findById($id),
+    ]);
+});
+
 $app->get('/delete/:id', function ($id) use ($app) {
     $app->render('delete.html.twig', [
         'id' => $id,
