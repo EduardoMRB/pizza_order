@@ -1,6 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+  <div class="messages">
+    <div class="success">{{ flash['success'] }}</div>
+  </div>
+
   <header>
     <h1>Cadastro de sabor</h1>
     <a href="/new">Adicionar sabor</a>
@@ -10,6 +14,7 @@
       <th>Sabor</th>
       <th>Preço</th>
       <th>Disponível?</th>
+      <th></th>
     </thead>
 
     <tbody>
@@ -18,6 +23,10 @@
         <td>{{ pizza.sabor }}</td>
         <td>{{ pizza.preco }}</td>
         <td>{{ pizza.disponivel }}</td>
+        <td>
+          <a href="/edit/{{ pizza.id }}">Editar</a>
+          <a href="/delete/{{ pizza.id }}">Remover</a>
+        </td>
       </tr>
       {% endfor %}
     </tbody>

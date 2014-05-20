@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<p>Tem certeza de que quer remover esse sabor?</p>
+<form action="/destroy/{{ id }}" method="POST">
+  <input type="hidden" name="_METHOD" value="DELETE">
+  <button type="submit">Sim!</button>
+  <a href="/">Cancelar</a>
+</form>
+
+{% endblock %}
