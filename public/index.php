@@ -51,6 +51,14 @@ $app->get('/edit/:id', function ($id) use ($app) {
     ]);
 });
 
+$app->put('/update', function () use ($app) {
+    $sabor = FromUserInput::build($app->request);
+    $app->saborMapper->update($sabor);
+    $app->flash('success', 'Alterado com sucesso');
+
+    $app->redirect('/');
+});
+
 $app->get('/delete/:id', function ($id) use ($app) {
     $app->render('delete.html.twig', [
         'id' => $id,
