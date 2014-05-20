@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+  <form action="/create" name="pizza" method="POST">
+    <div class="form-control">
+      <label for="sabor">Sabor:</label>
+      <input type="text" name="sabor" required>
+    </div>
+    <div class="form-control">
+      <label for="preco">Preço:</label>
+      <input type="text" name="preco">
+    </div>
+    <div class="form-control">
+      <label for="descricao">Descrição:</label>
+      <textarea name="descricao" required></textarea>
+    </div>
+    <div class="form-control">
+      <label for="disponivel">Disponível?</label>
+      <input type="checkbox" name="disponivel" value="1">
+    </div>
+  </form>
+{% endblock %}

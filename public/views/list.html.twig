@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+  <table>
+    <thead>
+      <th>Sabor</th>
+      <th>Preço</th>
+      <th>Disponível?</th>
+    </thead>
+
+    <tbody>
+      {% for pizza in pizzas %}
+      <tr>
+        <td>{{ pizza.sabor }}</td>
+        <td>{{ pizza.preco }}</td>
+        <td>{{ pizza.disponivel }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
